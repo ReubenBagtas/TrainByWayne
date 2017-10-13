@@ -5,24 +5,24 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 
-def index(request):
-    response = "Hello, I am your first request!"
-    context = {
-        "email": "blog@gmail.com",
-        "name": "mike"
-    }
-    return render(request, "index.html", context)
+def index(request): #Controller for Home Page
+    try:
+        request.session["currentUser"]
+    except:
+        request.session["currentUser"] = "Current User is Saved"
 
-def about(request):
+    return render(request, "index.html")
+
+def about(request): #Controller for About Page
     return render(request, "about.html")
 
-def packages(request):
+def packages(request): #Controller for Packages Page
     return render(request, "packages.html")
 
-def contact(request):
+def contact(request): #Controller for Contact Page
     return render(request, "contact.html")
 
-def testimonials(request):
+def testimonials(request): #Controller for Testimonials Page
     return render(request, "testimonials.html")
 
 
