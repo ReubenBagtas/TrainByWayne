@@ -20,27 +20,29 @@ def index(request): #Controller for Home Page
     return render(request, "index.html")
 
 def confirmpayment(request):
-    data= {
-        'pub_key': pub_key
+    print(request.POST)
+    data={
+        'amount': request.POST['amount']
     }
     return render(request, 'confirm.html', data)
 
 
 def pay(request):
-    print (request.POST ,"&&&&&&&&&&&&&&&&&&&&&&&")
-    customer = stripe.Customer.create(email=request.POST['stripeEmail'], source= request.POST['stripeToken'])
 
-    charge = stripe.Charge.create(
-        customer = customer.id,
-        amount = 1099,
-        currency = 'usd',
-        description = 'bundle A'
-    )
     return redirect('/thanks')
 
 def thanks(request):
     return render(request, "thanks.html")
 
+def packageselect(request):
+    return render(request, 'packageselection.html')
+
+def cartreview(request):
+    print(request.POST)
+    data={
+        'price':request.POST['price']
+    }
+    return render(request, 'cartreview.html', data)
 
 def about(request): #Controller for About Page
     return render(request, "about.html")
