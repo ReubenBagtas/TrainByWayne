@@ -9,5 +9,7 @@ urlpatterns = [
     url(r'^testimonials$', views.testimonials), #Testimonials Page routes to /testimonials
     url(r'^confirm$', views.confirmpayment), #where we display total and pay button!
     url(r'^pay$', views.pay),
-    url(r'^thanks$', views.thanks)
+    url(r'^thanks$', views.thanks),
+    url(r'^selectpackage$', views.packageselect),
+    url(r'^cartreview$', views.cartreview)
 ]
