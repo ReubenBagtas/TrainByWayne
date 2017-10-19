@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Select Packages</title>
+      {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'ourApp/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Put the static files in the static folder inside your app.  Django collects files within all static folders and puts them within a single folder -->    
+    </head>
+  <body>
+     <h1>select packages</h1>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+            <h1>Package 1 $1.50</h1>
+            <form action="/cartreview" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="price" value="1.50">
+                <input type="submit" vaue="submit">
+            </form>
+
+        </div>
+        <div class="col-md-4">
+                <h1>Package 2 $2.50</h1>
+                <form action="/cartreview" method="POST">
+                {% csrf_token %}
+                    <input type="hidden" name="price" value="2.50">
+                    <input type="submit" value="submit">
+                </form>
+    
+        </div>
+        <div class="col-md-4">
+          <h1>Package 3 $3.50</h1>
+            <form action="/cartreview" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="price" value="3.50">
+                <input type="submit" vaue="submit">
+            </form>
+        
+         </div>
+      </div>
+
+  </div>
+
+  </body>
+</html>
