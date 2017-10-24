@@ -9,15 +9,15 @@
     <meta name="author" content="">
 
     <title>Train By Wayne</title>
-
+     {% load static %}
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400|Prata" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
 
   </head>
 
@@ -40,24 +40,24 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active px-lg-4">
-              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="index.html">Home
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="index">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="about.html">Meet Your Coach</a>
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="about">Meet Your Coach</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="packages.html">Packages</a>
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="packages">Packages</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="contact.html">Contact</a>
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="contact">Contact</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="testimonials.html">Testimonials</a>
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="testimonials">Testimonials</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="cart.html">Cart</a>
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="cart">Cart</a>
             </li>
           </ul>
         </div>
@@ -71,9 +71,9 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 
   </body>
 
