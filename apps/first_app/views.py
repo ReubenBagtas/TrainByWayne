@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import stripe
 import ast
 
 from django.shortcuts import render, redirect
 pub_key=""
 secret_key=''
 
-stripe.api_key = secret_key
+
 
 # Create your views here.
 
