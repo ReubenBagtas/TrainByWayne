@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import stripe
 import ast
 
 from django.shortcuts import render, redirect
 pub_key=""
 secret_key=''
 
-stripe.api_key = secret_key
+
 
 # Create your views here.
 
@@ -44,16 +43,19 @@ def cartreview(request):
     }
     return render(request, 'cartreview.html', data)
 
-def about(request): #Controller for About Page
-    return render(request, "about.html")
-
-def packages(request): #Controller for Packages Page
-    return render(request, "packages.html")
-
 def contact(request): #Controller for Contact Page
     return render(request, "contact.html")
 
 def testimonials(request): #Controller for Testimonials Page
     return render(request, "testimonials.html")
+
+def meetYourCoach(request): #Controller for meetYourCoach Page
+    return render(request, "meetYourCoach.html")
+
+def packagePricing(request): #Controller for packagePricing Page
+    return render(request, "packagePricing.html")
+
+def cart(request): #Controller for cart Page
+    return render(request, "cart.html")
 
 
