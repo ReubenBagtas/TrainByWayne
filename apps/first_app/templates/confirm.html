@@ -8,49 +8,52 @@
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <script src="https://js.braintreegateway.com/web/3.23.0/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.23.0/js/paypal-checkout.min.js"></script>
-    
+
     <!-- The line above tells Django to be ready to listen for static files -->
-    <!-- Put the static files in the static folder inside your app.  Django collects files within all static folders and puts them within a single folder -->    
+    <!-- Put the static files in the static folder inside your app.  Django collects files within all static folders and puts them within a single folder -->
     </head>
   <body>
     <p>poop</p>
+    <p>{{amount}}</p>
       <div id="paypal-button-container"></div>
-      
+
       <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-      
+
       <script>
           paypal.Button.render({
-      
+
               env: 'sandbox', // Or 'sandbox'
-      
+
               client: {
                   sandbox:    'AQVByr8uqG3nfpgnNXi-llq7dBMPOiqTtc_BOCp-PqU17s23OQGL6It9kG_tBOZhoRsH-RCKf5_gZrSx',
                   production: 'xxxxxxxxx'
               },
-      
+
               commit: true, // Show a 'Pay Now' button
-      
+
               payment: function(data, actions) {
                   return actions.payment.create({
                       payment: {
                           transactions: [
                               {
+
                                   amount: { total: "{{amount}}", currency: 'USD' }
+
                               }
                           ]
                       }
                   });
               },
-      
+
               onAuthorize: function(data, actions) {
                   return actions.payment.execute().then(function(payment) {
                       window.alert('payment Complete!')
                       // The payment is complete!
                       // You can now show a confirmation message to the customer
-                  
+
                   });
               }
-      
+
           }, '#paypal-button-container');
       </script>
 
