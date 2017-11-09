@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Packages</title>
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
+
+    <script src="{% static 'js/packages.js' %}" type="text/javascript" ></script>
+  </head>
+
+    <body>
+      <div class="div-light py-5" style="background-color: rgba(255, 255, 255, 0.9);">
+        <div style="color: rgba(30, 43, 138, 0.9)" class="my-7 tagline-upper text-center text-heading font-weight-bold d-none d-lg-block">Train With Wayne</div>
+
+        <div style="color: rgba(30, 43, 138, 0.9)" class="tagline-lower font-weight-bold text-center text-expanded text-uppercase  d-none d-lg-block"><br>Making running easy for beginners and veterans for over 30 years</div>
+      </div>
+
+<br>
+
+<!-- Navigation -->
+<nav class="container navbar navbar-expand-lg navbar-light bg-faded py-lg-4" style="background-color: rgba(255, 255, 255, 0.9);">
+  <div class="container">
+    <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Train With Wayne</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active px-lg-4">
+          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="index">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="meetYourCoach">Meet Your Coach</a>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="packagePricing">Packages</a>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="contact">Contact</a>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="testimonials">Testimonials</a>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="cart">Cart</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+
+
+<!-- Packages -->
+      <div class="container div-light p-4" style="background-color: rgba(255, 255, 255, 0.9);">
+        <hr class="divider">
+        <h2 style="color: rgba(30, 43, 138, 0.9)" class="font-weight-bold text-center text-xl my-0">Packages</h2>
+        <hr class="divider">
+        <div class="row">
+
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="card h-100">
+              <img class="card-img-top" src="{% static 'img/sunset.jpg' %}" alt="">
+              <div class="card-body text-center">
+                <h4 class="card-title m-0">One Month<br>
+                  <!-- Button HTML (to Trigger Modal) -->
+                  <a href="#newLeaf" role="button" class="btn btn-large btn-secondary my-3" data-toggle="modal">Turn Over A New Leaf</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="card h-100">
+              <img class="fluid card-img-top" src="{% static 'img/gohrhyyan.jpg' %}" alt="">
+              <div class="card-body text-center">
+                <h4 class="card-title">Three Months<br>
+                  <!-- Button HTML (to Trigger Modal) -->
+                  <a href="#enhanceFitness" role="button" class="btn btn-large btn-secondary my-3" data-toggle="modal" style="vertical-align-center">Enhance Your Fitness</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img class="card-img-top" src="{% static 'img/stevenlelham.jpg' %}" alt="">
+              <div class="card-body text-center">
+                <h4 class="card-title m-0">Six Months<br>
+                  <!-- Button HTML (to Trigger Modal) -->
+                  <a href="#changeLife" role="button" class="btn btn-large btn-secondary my-3" data-toggle="modal">Change Your Life</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <!-- Modal HTML -->
+    <div id="newLeaf" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">One Month of Coaching</h4>
+                </div>
+                <div class="modal-body">
+                  <p>This package includes:
+                    <ul>
+                      <li>8 week get into shape for a 5k program</li>
+                      <li>One 15-minute Skype call a week</li>
+                      <li>Two email exchanges or text conversations a week</li>
+                    </ul>
+                    <p>$125</p>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <form action="/addToCart" method="POST">
+                      {% csrf_token %}
+                      <input type="hidden" name="package" value="1">
+                      <button type="submit" class="btn btn-secondary" value="submit">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="enhanceFitness" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Three Months of Coaching</h4>
+                </div>
+                <div class="modal-body">
+                  <p>This package includes:
+                    <ul>
+                      <li>8 week get into shape for a 5k program</li>
+                      <li>12 week plan for a 5k, 10k, or half marathon built around your life schedule</li>
+                      <li>Up to 30 minutes of Skype calls per week</li>
+                      <li>Up to three email or text message conversations a week</li>
+                      <li>Video analysis of your running form</li>
+                    </ul>
+                    <p>$300</p>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <form action="/addToCart" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="package" value="2">
+                    <button type="submit" class="btn btn-secondary" value="submit">Add to Cart</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="changeLife" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Six Months of Coaching</h4>
+                </div>
+                <div class="modal-body">
+                  <p>This package includes:
+                    <ul>
+                      <li>8 week get into shape for a 5k program</li>
+                      <li>12-16 week plan for a 5k, 10k, half marathon, or marathon built around your life schedule</li>
+                      <li>Up to 45 minutes of Skype calls per week</li>
+                      <li>Up to four email or text message conversations a week</li>
+                      <li>Video analysis of your running form</li>
+                    </ul>
+                    <p>$500</p>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <form action="/addToCart" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="package" value="3">
+                    <button type="submit" class="btn btn-secondary" value="submit">Add to Cart</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="div-light p-4 text-center" style="background-color: rgba(255, 255, 255, 0.9);">
+      <div class="container">
+        <p class="m-0">Copyright &copy; Wayne Young 2017</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  </body>
+</html>

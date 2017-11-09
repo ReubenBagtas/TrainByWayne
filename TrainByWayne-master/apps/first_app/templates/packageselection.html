@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Select Package</title>
+      {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Put the static files in the static folder inside your app.  Django collects files within all static folders and puts them within a single folder -->
+    </head>
+
+  <body>
+     <h1>select packages</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h1>Turn Over A New Leaf $125</h1>
+            <form action="/cartreview" method="POST">
+            {% csrf_token %}
+              <input type="hidden" name="price" value="125">
+              <input type="submit" vaue="submit">
+            </form>
+          </div>
+
+          <div class="col-md-4">
+            <h1>Enhance Your Fitness $300</h1>
+            <form action="/cartreview" method="POST">
+            {% csrf_token %}
+              <input type="hidden" name="price" value="300">
+              <input type="submit" value="submit">
+            </form>
+          </div>
+
+          <div class="col-md-4">
+            <h1>Change Your Life $500</h1>
+            <form action="/cartreview" method="POST">
+            {% csrf_token %}
+              <input type="hidden" name="price" value="500">
+              <input type="submit" vaue="submit">
+            </form>
+          </div>
+        </div>
+      </div>
+
+  <footer class="bg-faded text-center py-5">
+    <div class="container">
+      <p class="m-0">Copyright &copy; Wayne Young 2017</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  </body>
+</html>

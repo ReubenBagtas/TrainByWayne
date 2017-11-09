@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Confirm Your Order</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+    <script src="https://js.braintreegateway.com/web/3.23.0/js/client.min.js"></script>
+
+    <script src="https://js.braintreegateway.com/web/3.23.0/js/paypal-checkout.min.js"></script>
+
+    {% load static %}
+   <!-- Bootstrap core CSS -->
+   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+   <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+   <!-- Custom fonts for this template -->
+   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+
+   <!-- Custom styles for this template -->
+   <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
+
+    </head>
+
+  <body>
+    <p>{{amount}}</p>
+      <div id="paypal-button-container"></div>
+
+      <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+      <script>
+          paypal.Button.render({
+
+              env: 'sandbox', // Or 'sandbox'
+
+              client: {
+                  sandbox:    'AQVByr8uqG3nfpgnNXi-llq7dBMPOiqTtc_BOCp-PqU17s23OQGL6It9kG_tBOZhoRsH-RCKf5_gZrSx',
+                  production: 'xxxxxxxxx'
+              },
+
+              commit: true, // Show a 'Pay Now' button
+
+              payment: function(data, actions) {
+                  return actions.payment.create({
+                      payment: {
+                          transactions: [
+                              {
+
+                                  amount: { total: "{{amount}}", currency: 'USD' }
+
+                              }
+                          ]
+                      }
+                  });
+              },
+
+              onAuthorize: function(data, actions) {
+                  return actions.payment.execute().then(function(payment) {
+                      window.alert('payment Complete!')
+                      // The payment is complete!
+                      // You can now show a confirmation message to the customer
+
+                  });
+              }
+
+          }, '#paypal-button-container');
+      </script>
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/popper/popper.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
