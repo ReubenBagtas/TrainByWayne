@@ -28,12 +28,14 @@ th, td {
 }
 
 .btn-secondary, .btn-secondary:active, .btn-secondary:visited {
-  background-color: rgba(30, 43, 138, 0.7);
+  background-color: rgba(252, 181, 29, 1);
+  color: rgba(30, 43, 138, 0.9);
+  font-weight: bold;
 }
 
 .btn-secondary:hover{
-background-color: rgba(251, 185, 4, .7);
-color: #1e2b8a;
+  background-color: rgba(30, 43, 138, 0.9);
+  color: rgba(252, 181, 29, 1);
 }
 
 .btn-default, .btn-default:active, .btn-default:visited{
@@ -41,10 +43,9 @@ color: #1e2b8a;
 }
 
 .btn-default:hover{
-background-color: rgba(227, 38, 38, 0.84);
+background-color: rgba(158, 0, 0, 0.90);
 color: black;
 }
-
 
 .tagline-upper {
   font-size: 5rem;

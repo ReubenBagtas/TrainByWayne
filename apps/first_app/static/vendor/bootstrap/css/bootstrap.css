@@ -86,9 +86,7 @@ article, aside, dialog, figcaption, figure, header, hgroup, main, nav, section {
   display: block;
 }
 
-footer{
-  position: absolute;
-}
+
 
 body {
   margin: 0;
@@ -2022,14 +2020,14 @@ fieldset[disabled] a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #868e96;
-  border-color: #868e96;
+  background-color: #1e2b8a;
+  border-color: #1e2b8a;
 }
 
 .btn-secondary:hover {
-  color: #fff;
-  background-color: #727b84;
-  border-color: #6c757d;
+  color: #1e2b8a;
+  background-color: orange;
+  border-color: #1e2b8a;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
@@ -3166,7 +3164,7 @@ tbody.collapse.show {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: rgba(30, 43, 138, 0.9) !important;
+  /*color: rgba(30, 43, 138, 0.9) !important;*/
 }
 
 .nav-link:focus{
@@ -3187,7 +3185,7 @@ tbody.collapse.show {
 
 .nav-tabs .nav-item {
   margin-bottom: -1px;
-  color: rgba(30, 43, 138, 0.9);
+  /*color: rgba(30, 43, 138, 0.9);*/
 }
 
 .nav-tabs .nav-link {
@@ -4415,7 +4413,7 @@ a.list-group-item-secondary:focus, a.list-group-item-secondary:hover,
 button.list-group-item-secondary:focus,
 button.list-group-item-secondary:hover {
   color: #464a4e;
-  background-color: #cfd2d6;
+  background-color: #1e2b8a;
 }
 
 a.list-group-item-secondary.active,

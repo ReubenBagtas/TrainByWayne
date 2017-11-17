@@ -13,6 +13,8 @@
      <!-- Bootstrap core CSS -->
      <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
      <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+     <link rel="stylesheet" href="../css/business-casual.css">
+
 
      <!-- Custom fonts for this template -->
      <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
@@ -42,24 +44,24 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active px-lg-4">
-              <a class="font-weight-bold nav-link text-uppercase text-expanded" href="index">Home
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="index">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="font-weight-bold nav-link text-uppercase text-expanded" href="meetYourCoach">Meet Your Coach</a>
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="meetYourCoach">Meet Your Coach</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="font-weight-bold nav-link text-uppercase text-expanded" href="packagePricing">Packages</a>
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="packagePricing">Packages</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="font-weight-bold nav-link text-uppercase text-expanded" href="contact">Contact</a>
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="contact">Contact</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="font-weight-bold nav-link text-uppercase text-expanded" href="testimonials">Testimonials</a>
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="testimonials">Testimonials</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="font-weight-bold nav-link text-uppercase text-expanded" href="cart">Cart</a>
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: orange;" href="cart">Cart</a>
             </li>
           </ul>
         </div>
@@ -68,7 +70,7 @@
     <br>
 
       <div class="container div-light p-4" style="background-color: rgba(255, 255, 255, 0.9);">
-        <!-- for loop runs through session cart and displays packages you have added and the total amount to be payed -->
+        <!-- for loop runs through session cart and displays packages you have added and the total amount to be paid -->
         {% for i in cart %}
           {% if i == '1' %}
             <h3 style="color: rgba(30, 43, 138, 0.9)" class="font-weight-bold text-xl my-0">You're Turning Over A New Leaf!</h3>
@@ -115,19 +117,22 @@
         <br>
         <form action="/clearCart" method="POST">
            {% csrf_token %}
-           <input type="submit" value="Clear Your Cart">
+           <button class="btn btn-large btn-secondary" type="submit" name="button">Clear Your Cart</button>
         </form>
         <br>
         <!-- takes you to the payment (confirm?) page -->
         <form action="/confirm" method="POST">
           {% csrf_token %}
-          <button type="submit" name="button">Pay</button>
+          <button class="btn btn-large btn-secondary" type="submit" name="button">Pay</button>
+        </a>
         </form>
+
       </div>
     <br>
 
 <br>
-    <div class="div-light p-4 text-center" style="background-color: rgba(255, 255, 255, 0.9);">
+  <footer>
+    <div class="div-light p-4 text-center feet" style="background-color: rgba(255, 255, 255, 0.9);">
       <div class="container">
         <p class="m-0">Copyright &copy; Wayne Young 2017</p>
       </div>

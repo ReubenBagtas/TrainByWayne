@@ -18,21 +18,74 @@
    <!-- Bootstrap core CSS -->
    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
    <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+   <link href="css/business-casual.css" rel="stylesheet">
 
    <!-- Custom fonts for this template -->
    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
 
    <!-- Custom styles for this template -->
    <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
-
-    </head>
+  </head>
 
   <body>
-    <p>{{amount}}</p>
+
+<!-- Header -->
+    <div class="div-light py-5" style="background-color: rgba(255, 255, 255, 0.9);">
+      <div style="color: rgba(30, 43, 138, 0.9)" class="my-7 tagline-upper text-center text-heading font-weight-bold d-none d-lg-block">Train With Wayne</div>
+
+      <div style="color: rgba(30, 43, 138, 0.9)" class="tagline-lower font-weight-bold text-center text-expanded text-uppercase  d-none d-lg-block"><br>Making running easy for beginners and veterans for over 30 years</div>
+    </div>
+<br>
+    <!-- Navigation -->
+    <nav class="container navbar navbar-expand-lg navbar-light bg-faded py-lg-4" style="background-color: rgba(255, 255, 255, 0.9);">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Train With Wayne</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="index">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="meetYourCoach">Meet Your Coach</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="packagePricing">Packages</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="contact">Contact</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="font-weight-bold nav-link text-uppercase text-expanded" style="color: rgba(30, 43, 138, 0.9)" href="cart">Cart</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+
+<!-- Confirm Your Order -->
+  <div class="container div-light text-center p-4" style="background-color: rgba(255, 255, 255, 0.9);">
+    <hr class="divider">
+    <h2 style="color: rgba(30, 43, 138, 0.9)" class="font-weight-bold text-center text-xl my-0">Order Confirmation</h2>
+    <hr class="divider">
+    <br>
+    <br>
+
+    <!-- PayPal Functionalities -->
+    <h1>${{amount}}</h1>
+    <h2></h2>
+
+    <br
       <div id="paypal-button-container"></div>
-
       <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
       <script>
           paypal.Button.render({
 
@@ -70,6 +123,13 @@
 
           }, '#paypal-button-container');
       </script>
+      </div>
+      <br>
+
+      <!-- Footer -->
+      <div class="div-light p-4 text-center feet" style="background-color: rgba(255, 255, 255, 0.9);">
+        <p class="m-0">Copyright &copy; Wayne Young 2017</p>
+      </div>
 
       <!-- Bootstrap core JavaScript -->
       <script src="vendor/jquery/jquery.min.js"></script>
