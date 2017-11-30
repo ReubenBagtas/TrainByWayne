@@ -13,8 +13,10 @@
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
+
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400|Prata" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/business-casual.css">
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
@@ -63,62 +65,31 @@
         </div>
       </div>
     </nav>
-
-    <div class="container">
-      <div class="bg-faded p-4 my-4">
-        <h6 style='color:red'>I still intend to beautify this. the struggle of python came back to me but i finally got it to do what i wanted - jordan</h6>
-        <!-- for loop runs through session cart and displays packages you have added and the total amount to be payed -->
-        {% for i in cart %}
-          {% if i == '1' %}
-            <h3>Package 1</h3>
-            Includes:
-            <ul>
-              <li>8 week get into shape for a 5k program</li>
-              <li>one 15-minute skype call a week</li>
-              <li>two email exchanges or text conversations a week</li>
-            </ul>
-          {% endif %}
-          {% if i == '2' %}
-            <h3>Package 2</h3>
-            Includes:
-            <ul>
-              <li>8 week get into shape for a 5k program</li>
-              <li>12 week plan for a 5k, 10k, or half marathon built around your life schedule</li>
-              <li>up to 30 minutes of skype calls per week</li>
-              <li>up to three email or text message conversations a week</li>
-              <li>video analysis of your running form</li>
-            </ul>
-          {% endif %}
-          {% if i == '3' %}
-            <h3>Package 3</h3>
-            Includes:
-            <ul>
-              <li>8 week get into shape for a 5k program</li>
-              <li>12-16 week plan for a 5k, 10k, or half marathon built around your life schedule</li>
-              <li>up to 45 minutes of skype calls per week</li>
-              <li>up to four email or text message conversations a week</li>
-              <li>video analysis of your running form</li>
-            </ul>
-          {% endif %}
-        {% endfor %}
-        {% if total > 0 %}
-          <h1>Total: {{total}}</h1>
-        {% endif %}
-        {% if total == 0 %}
-          <h1>Your cart is empty</h1>
-        {% endif %}
-        <!-- temporary button to clear session cart -->
-        <!-- <form action="/clearCart" method="POST">
-           {% csrf_token %}
-           <input type="submit" value="temporary session[cart] clear">
-        </form> -->
-        <!-- takes you to the payment (confirm?) page -->
-        <form action="/confirm" method="POST">
-          {% csrf_token %}
-          <button type="submit" name="button">Pay</button>
-        </form>
+    
+    <section class="confirm">
+        <span class="cart_title">Welcome to your cart</span>
+      <div class="row">
+        <div class="container">
+          <div class="col-md-6">
+            <div class="package__title">Package Details</div>
+            <span class="item__details"> 
+                 <li>8 week get into shape for a 5k program</li>
+                 <li>12 week plan for a 5k, 10k, or half marathon built around your life schedule</li>
+                 <li>Up to 30 minutes of Skype calls per week</li>
+                 <li>Up to three email or text message conversations a week</li>
+                 <li>Video analysis of your running form</li>
+            </span>
+          </div>
+          <div class="col-md-6">
+            <span class="package__price">Total: $300</span>
+          </div>
+          <form action="confirm/300">
+            <input type="hidden" name="price" value"300">
+            <input type="submit">
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
 
     <footer class="bg-faded text-center py-5">
       <div class="container">

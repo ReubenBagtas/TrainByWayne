@@ -20,10 +20,9 @@ def index(request): #Controller for Home Page
 
     return render(request, "index.html")
 
-def confirmpayment(request):
-    print(request.POST)
+def confirmpayment(request, price):
     data={
-        'amount': request.session['paymentTotal']
+        'amount': price
     }
     return render(request, 'confirm.html', data)
 
@@ -57,6 +56,28 @@ def meetYourCoach(request): #Controller for meetYourCoach Page
 def packagePricing(request): #Controller for packagePricing Page
     return render(request, "packagePricing.html")
 
+
+def cart(request): #Controller for cart Page
+    try:
+        if request.POST['package'] == "3":
+            print("3 month")
+            return render(request,"cart3.html")
+        elif request.POST['package'] == "1":
+            print("1 month")
+            return render(request, "cart1.html")
+        elif request.POST['package'] == "6":
+            print("6 month")
+            return render(request, "cart6.html")
+        else:
+            print("no months *******")
+            return render(request, "cart.html")
+    except:
+        print("not working")
+        return render(request, "cart.html")
+
+def admin(request):
+    return render(request, "admin.html")
+
 def addToCart(request): #controller for adding packages to cart
     print(request.POST)
     if request.POST['package'] == '1':
@@ -69,16 +90,3 @@ def addToCart(request): #controller for adding packages to cart
         request.session['paymentTotal'] += 500
         request.session['cart'].append('3')
     return redirect("/cart")
-
-def clearCart(request):
-    cart = []
-    request.session['cart'] = []
-    request.session['paymentTotal'] = 0
-    return redirect("/packagePricing")
-
-def cart(request): #Controller for cart Page
-    data={
-        'total':request.session['paymentTotal'],
-        'cart':request.session['cart']
-        }
-    return render(request, "cart.html", data)
