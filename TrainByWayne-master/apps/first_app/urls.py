@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^index$', views.index), #HomePage should be on localhost:8000 while on Development
     url(r'^contact$', views.contact), #Contact Page routes to /contact
     url(r'^testimonials$', views.testimonials), #Testimonials Page routes to /testimonials
-    url(r'^confirm/(?P<price>\d+)$', views.confirmpayment), #where we display total and pay button!
+    url(r'^confirm$', views.confirmpayment), #where we display total and pay button!
     url(r'^pay$', views.pay),
     url(r'^thanks$', views.thanks),
     url(r'^selectpackage$', views.packageselect),

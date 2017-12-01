@@ -20,9 +20,11 @@ def index(request): #Controller for Home Page
 
     return render(request, "index.html")
 
-def confirmpayment(request, price):
+def confirmpayment(request):
+    print(request.POST)
     data={
-        'amount': price
+        'amount': request.POST['price'],
+        'package_type': request.POST['package_type'],
     }
     return render(request, 'confirm.html', data)
 

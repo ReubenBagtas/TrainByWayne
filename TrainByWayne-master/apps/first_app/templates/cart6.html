@@ -81,8 +81,10 @@
           <div class="col-md-6">
             <span class="package__price">Total: $500</span>
           </div>
-          <form action="confirm/500">
-            <input type="hidden" name="price" value"300">
+          <form action="confirm" method="post">
+              {% csrf_token %}
+            <input type="hidden" name="package_type" value="Six Months of Coaching">
+            <input type="hidden" name="price" value="500">
             <input type="submit">
           </form>
         </div>
