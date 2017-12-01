@@ -17,7 +17,8 @@
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400|Prata" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/business-casual.css">
-
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    
     <!-- Custom styles for this template -->
     <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
 
@@ -65,33 +66,77 @@
         </div>
       </div>
     </nav>
-    
-    <section class="confirm">
+    <div class="container">
+
+      <section class="confirm">
         <span class="cart_title">Welcome to your cart</span>
-      <div class="row">
-        <div class="container">
-          <div class="col-md-6">
-            <div class="package__title">Package Details</div>
-            <span class="item__details"> 
-                 <li>8 week get into shape for a 5k program</li>
-                 <li>12 week plan for a 5k, 10k, or half marathon built around your life schedule</li>
-                 <li>Up to 30 minutes of Skype calls per week</li>
-                 <li>Up to three email or text message conversations a week</li>
-                 <li>Video analysis of your running form</li>
-            </span>
-          </div>
-          <div class="col-md-6">
-            <span class="package__price">Total: $300</span>
-          </div>
-          <form action="confirm" method="post">
+        <div class="row">
+          <div class="container">
+            <div class="col-md-6">
+              <div class="package__title">Package Details</div>
+              <span class="item__details"> 
+                <li>8 week get into shape for a 5k program</li>
+                <li>12 week plan for a 5k, 10k, or half marathon built around your life schedule</li>
+                <li>Up to 30 minutes of Skype calls per week</li>
+                <li>Up to three email or text message conversations a week</li>
+                <li>Video analysis of your running form</li>
+              </span>
+            </div>
+            
+              <span class="package__price">Total: $300</span>
+            
+            <!-- <form action="confirm" method="post" class="proceed">
               {% csrf_token %}
-            <input type="hidden" name="package_type" value="Three Months of Coaching">
-            <input type="hidden" name="price" value="300">
-            <input type="submit">
-          </form>
+              <input type="hidden" name="package_type" value="Three Months of Coaching">
+              <input type="hidden" name="price" value="300">
+              <input type="submit" value="Proceed to checkout" class="proceed__btn">
+            </form> -->
+
+            <div id="paypal-button-container" class="proceed"></div>
+            
+                  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+            
+                  <script>
+                      paypal.Button.render({
+            
+                          env: 'sandbox', // Or 'sandbox'
+            
+                          client: {
+                              sandbox:    'AQVByr8uqG3nfpgnNXi-llq7dBMPOiqTtc_BOCp-PqU17s23OQGL6It9kG_tBOZhoRsH-RCKf5_gZrSx',
+                              production: 'xxxxxxxxx'
+                          },
+            
+                          commit: true, // Show a 'Pay Now' button
+            
+                          payment: function(data, actions) {
+                              return actions.payment.create({
+                                  payment: {
+                                      transactions: [
+                                          {
+            
+                                              amount: { total: "300", currency: 'USD' }
+            
+                                          }
+                                      ]
+                                  }
+                              });
+                          },
+            
+                          onAuthorize: function(data, actions) {
+                              return actions.payment.execute().then(function(payment) {
+                                  window.alert('payment Complete!')
+                                  // The payment is complete!
+                                  // You can now show a confirmation message to the customer
+            
+                              });
+                          }
+            
+                      }, '#paypal-button-container');
+                  </script>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <footer class="bg-faded text-center py-5">
       <div class="container">

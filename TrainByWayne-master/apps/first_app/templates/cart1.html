@@ -16,6 +16,9 @@
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400|Prata" rel="stylesheet">
 
+  <!-- paypal script -->
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>  
+
   <!-- Custom styles for this template -->
   <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
 
@@ -25,7 +28,7 @@
 
   <div class="div-light py-5" style="background-color: rgba(255, 255, 255, 0.8);">
 
-    <div style="color: rgba(30, 43, 138, 0.7)" class="my-7 tagline-upper text-center text-heading text-shadow d-none d-lg-block">Train With Wayne</div>
+    <div style="color: rgba(125, 132, 173, 0.7)" class="my-7 tagline-upper text-center text-heading text-shadow d-none d-lg-block">Train With Wayne</div>
 
     <div style="color: rgba(30, 43, 138, 0.7)" class="text-shadow tagline-lower text-center text-expanded text-uppercase  d-none d-lg-block">
       <br>Making running easy for beginners and veterans for over 30 years</div>
@@ -65,31 +68,77 @@
       </div>
     </div>
   </nav>
+  <div class="container">
+    <section class="confirm">
+      <span class="cart_title">Welcome to your cart</span>
+      <div class="row">
+        <div class="container">
+          <div class="col-md-6">
+            <div class="package__title">Package Details</div>
+            <span class="item__details">
+              <li>8 week get into shape for a 5k program</li>
+              <li>One 15-minute Skype call a week</li>
+              <li>Two email exchanges or text conversations a week</li>
+            </span>
+          </div>
+      
+            <span class="package__price">Total: $125</span>
+          
+          <!-- <form action="confirm" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="price" value="125">
+            <input type="hidden" name="package_type" value="One Month of Coaching">
+            <input type="submit">
+          </form> -->
+          <div id="paypal-button-container" class="proceed"></div>
 
-  <section class="confirm">
-    <span class="cart_title">Welcome to your cart</span>
-    <div class="row">
-      <div class="container">
-        <div class="col-md-6">
-          <div class="package__title">Package Details</div>
-          <span class="item__details">
-            <li>8 week get into shape for a 5k program</li>
-            <li>One 15-minute Skype call a week</li>
-            <li>Two email exchanges or text conversations a week</li>
-          </span>
+          <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+          <script>
+            paypal.Button.render({
+
+              env: 'sandbox', // Or 'sandbox'
+
+              client: {
+                sandbox: 'AQVByr8uqG3nfpgnNXi-llq7dBMPOiqTtc_BOCp-PqU17s23OQGL6It9kG_tBOZhoRsH-RCKf5_gZrSx',
+                production: 'xxxxxxxxx'
+              },
+
+              commit: true, // Show a 'Pay Now' button
+
+              payment: function (data, actions) {
+                return actions.payment.create({
+                  payment: {
+                    transactions: [{
+
+                      amount: {
+                        total: "125",
+                        currency: 'USD'
+                      }
+
+                    }]
+                  }
+                });
+              },
+
+              onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function (payment) {
+                  window.alert('payment Complete!')
+                  // The payment is complete!
+                  // You can now show a confirmation message to the customer
+
+                });
+              }
+
+            }, '#paypal-button-container');
+          </script>
+
+
+
         </div>
-        <div class="col-md-6">
-          <span class="package__price">Total: $125</span>
-        </div>
-        <form action="confirm" method="POST">
-          {% csrf_token %}
-          <input type="hidden" name="price" value="125">
-          <input type="hidden" name="package_type" value="One Month of Coaching">
-          <input type="submit">
-        </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <footer class="bg-faded text-center py-5">
     <div class="container">
