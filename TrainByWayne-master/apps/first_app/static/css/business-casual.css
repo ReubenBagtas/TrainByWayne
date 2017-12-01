@@ -250,5 +250,5 @@ hr.divider {
 
     .item__details{
       display: block;
-      animation: moveInRight 1s ease-in-out;
+      animation: moveInRight 3s ease-in-out;
     }
