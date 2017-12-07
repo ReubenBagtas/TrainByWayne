@@ -4,8 +4,8 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
  */
 
-body {
-  font-family: 'Roboto', sans-serif;
+ body {
+  font-family: 'Prata', serif;
   font-family: 'Lato', sans-serif;
   background: url('../img/bground.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -15,8 +15,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .text-heading {
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Prata', serif;
 }
 
 h1 {
@@ -160,3 +159,96 @@ hr.divider {
   .timeline .timeline-body > ul,
   .timeline .timeline-body > p {
     margin-bottom: 0; }
+
+
+    /* styling for the cart/ confirmation */
+    .confirm{
+      color: white;
+      padding: 0 0;
+      background-color: grey;
+      opacity: 1;
+      padding-bottom: 30vh;
+    }
+
+    .row{
+      max-width:1140px;
+      margin: 0 auto;
+      /* height: 30vh; */
+    }
+    
+    .cart_title{
+      text-transform: uppercase;
+      display:block;
+      text-align: center;
+    }
+
+    .container{
+      position: relative;
+    }
+  
+    .proceed{
+      position: absolute;
+      bottom: 0px;
+      right: 50px;
+      border: none;
+    }
+
+ 
+
+    /* .proceed__btn, proceed__btn:link, proceed__btn:visited{
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+      transition: all .2s;
+    }
+    .proceed__btn:hover{
+      color: green;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+    .proceed__btn:active, .proceed__btn:focus .proceed:visited{
+      text-decoration: none;
+      transform: scale(1.1);
+      box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.4);
+      border: none;
+    }
+
+    .proceed__btn:focus{
+      transform: scale(1.1);
+      box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.4);
+      border: none !important; */
+    /* } */
+
+    .col-md-6{
+      position: relative;
+    }
+
+    .package__price{
+      position: absolute;
+      bottom: 40px;
+      right: 50px;
+    }
+    
+        /*animations*/
+    
+        @keyframes moveInRight {
+          /* these percentages represent what happens at eat point of the animation */
+          0%{
+              opacity: 0;
+              transform: translateX(300px);
+          }
+      
+          80%{
+              transform: translateX(-20px);
+          }
+      
+          100%{
+              opacity: 1;
+              transform: translateX(0);
+          }
+      }
+
+    .item__details{
+      display: block;
+      animation: moveInRight 3s ease-in-out;
+    }

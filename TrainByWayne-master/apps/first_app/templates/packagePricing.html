@@ -8,12 +8,12 @@
 
     <title>Packages</title>
     {% load static %}
+
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400|Prata" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
@@ -22,54 +22,52 @@
   </head>
 
     <body>
-      <div class="div-light py-5" style="background-color: rgba(255, 255, 255, 0.9);">
-        <div style="color: rgba(30, 43, 138, 0.9)" class="my-7 tagline-upper text-center text-heading font-weight-bold d-none d-lg-block">Train With Wayne</div>
+        <div class="div-light py-5" style="background-color: rgba(255, 255, 255, 0.8);">
+          <div style="color: rgba(30, 43, 138, 0.7)" class="my-7 tagline-upper text-center text-heading text-shadow d-none d-lg-block">Train With Wayne</div>
+          <div style="color: rgba(30, 43, 138, 0.7)" class="text-shadow tagline-lower text-center text-expanded text-uppercase  d-none d-lg-block"><br>Making running easy for beginners and veterans for over 30 years</div>
+        </div>
 
-        <div style="color: rgba(30, 43, 138, 0.9)" class="tagline-lower font-weight-bold text-center text-expanded text-uppercase  d-none d-lg-block"><br>Making running easy for beginners and veterans for over 30 years</div>
+<br>
+
+    <nav class="container navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Train With Wayne</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="index">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="meetYourCoach">Meet Your Coach</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="packagePricing">Packages</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="contact">Contact</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="cart">Cart</a>
+            </li>
+          </ul>
+        </div>
       </div>
-
-<br>
-
-<!-- Navigation -->
-<nav class="container navbar navbar-expand-lg navbar-light bg-faded py-lg-4" style="background-color: rgba(255, 255, 255, 0.9);">
-  <div class="container">
-    <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Train With Wayne</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item active px-lg-4">
-          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="index">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item px-lg-4">
-          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="meetYourCoach">Meet Your Coach</a>
-        </li>
-        <li class="nav-item px-lg-4">
-          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="packagePricing">Packages</a>
-        </li>
-        <li class="nav-item px-lg-4">
-          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="contact">Contact</a>
-        </li>
-        <li class="nav-item px-lg-4">
-          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="testimonials">Testimonials</a>
-        </li>
-        <li class="nav-item px-lg-4">
-          <a class="font-weight-bold nav-link text-uppercase text-expanded" href="cart">Cart</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<br>
+    </nav>
 
 
 <!-- Packages -->
-      <div class="container div-light p-4" style="background-color: rgba(255, 255, 255, 0.9);">
+    <div class="container">
+      <div class="bg-faded p-4 my-4">
         <hr class="divider">
-        <h2 style="color: rgba(30, 43, 138, 0.9)" class="font-weight-bold text-center text-xl my-0">Packages</h2>
+        <h2 style="color: rgba(30, 43, 138, 0.7)" class="text-shadow text-center text-lg my-0">Packages</h2>
         <hr class="divider">
         <div class="row">
 
@@ -111,6 +109,7 @@
 
         </div>
       </div>
+    </div>
 
     <!-- Modal HTML -->
     <div id="newLeaf" class="modal fade">
@@ -131,11 +130,13 @@
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <form action="/addToCart" method="POST">
+
+                    <form action="/cart" method="post">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       {% csrf_token %}
                       <input type="hidden" name="package" value="1">
-                      <button type="submit" class="btn btn-secondary" value="submit">Add to Cart</button>
+                      <button type="submit" class="btn btn-secondary">Add to Cart</button>
+
                     </form>
                 </div>
             </div>
@@ -162,12 +163,13 @@
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <form action="/addToCart" method="POST">
-                    {% csrf_token %}
-                    <input type="hidden" name="package" value="2">
-                    <button type="submit" class="btn btn-secondary" value="submit">Add to Cart</button>
-                  </form>
+                    <form action="/cart" method="post">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      {% csrf_token %}
+                      <input type="hidden" name="package" value="3">
+                      <button type="submit" class="btn btn-secondary">Add to Cart</button>   
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -193,19 +195,22 @@
                   </p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <form action="/addToCart" method="POST">
+                  <form action="/cart" method="post">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     {% csrf_token %}
-                    <input type="hidden" name="package" value="3">
-                    <button type="submit" class="btn btn-secondary" value="submit">Add to Cart</button>
+                    <input type="hidden" name="package" value="6">
+                    <button type="submit" class="btn btn-secondary">Add to Cart</button>
+
                   </form>
                 </div>
             </div>
         </div>
     </div>
-    <br>
 
-    <div class="div-light p-4 text-center" style="background-color: rgba(255, 255, 255, 0.9);">
+
+
+
+    <footer class="bg-faded text-center py-5">
       <div class="container">
         <p class="m-0">Copyright &copy; Wayne Young 2017</p>
       </div>
