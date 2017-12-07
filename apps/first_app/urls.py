@@ -16,7 +16,8 @@ urlpatterns = [
     url(r'^packagePricing$', views.packagePricing), #packagePricing Route
     url(r'^thanks$', views.thanks),
     url(r'^addToCart$', views.addToCart),
-    url(r'^clearCart$', views.clearCart),
+    # url(r'^clearCart$', views.clearCart),
     url(r'^cart$', views.cart), #Cart route
+    url(r'^admin$',views.admin),
 
 ]

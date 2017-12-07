@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Train By Wayne</title>
+  {% load static %}
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400|Prata" rel="stylesheet">
+
+  <!-- paypal script -->
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>  
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/business-casual.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="div-light py-5" style="background-color: rgba(255, 255, 255, 0.8);">
+
+    <div style="color: rgba(125, 132, 173, 0.7)" class="my-7 tagline-upper text-center text-heading text-shadow d-none d-lg-block">Train With Wayne</div>
+
+    <div style="color: rgba(30, 43, 138, 0.7)" class="text-shadow tagline-lower text-center text-expanded text-uppercase  d-none d-lg-block">
+      <br>Making running easy for beginners and veterans for over 30 years</div>
+  </div>
+  <br>
+  <!-- Navigation -->
+  <nav class="container navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Train With Wayne</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active px-lg-4">
+            <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="index">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="meetYourCoach">Meet Your Coach</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="packagePricing">Packages</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="contact">Contact</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a style="color: rgba(30, 43, 138, 0.7)" class="text-shadow nav-link text-uppercase text-expanded" href="cart">Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <section class="confirm">
+      <span class="cart_title">Welcome to your cart</span>
+      <div class="row">
+        <div class="container">
+          <div class="col-md-6">
+            <div class="package__title">Package Details</div>
+            <span class="item__details">
+              <li>8 week get into shape for a 5k program</li>
+              <li>One 15-minute Skype call a week</li>
+              <li>Two email exchanges or text conversations a week</li>
+            </span>
+          </div>
+      
+            <span class="package__price">Total: $125</span>
+          
+          <!-- <form action="confirm" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="price" value="125">
+            <input type="hidden" name="package_type" value="One Month of Coaching">
+            <input type="submit">
+          </form> -->
+          <div id="paypal-button-container" class="proceed"></div>
+
+          <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+          <script>
+            paypal.Button.render({
+
+              env: 'sandbox', // Or 'sandbox'
+
+              client: {
+                sandbox: 'AQVByr8uqG3nfpgnNXi-llq7dBMPOiqTtc_BOCp-PqU17s23OQGL6It9kG_tBOZhoRsH-RCKf5_gZrSx',
+                production: 'xxxxxxxxx'
+              },
+
+              commit: true, // Show a 'Pay Now' button
+
+              payment: function (data, actions) {
+                return actions.payment.create({
+                  payment: {
+                    transactions: [{
+
+                      amount: {
+                        total: "125",
+                        currency: 'USD'
+                      }
+
+                    }]
+                  }
+                });
+              },
+
+              onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function (payment) {
+                  window.alert('payment Complete!')
+                  // The payment is complete!
+                  // You can now show a confirmation message to the customer
+
+                });
+              }
+
+            }, '#paypal-button-container');
+          </script>
+
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="bg-faded text-center py-5">
+    <div class="container">
+      <p class="m-0">Copyright &copy; Wayne Young 2017</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
